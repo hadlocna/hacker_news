@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Welcome to Hacker News Rip Off!</h1>
+
+<!-- <a href='/login'>Log In</a>
+<p> <a href='/signin'>Sign Up</a></p>
+<p> <a href='/logout'>Log Out</a></p>
+<p> <a href="/profile/<%=session[:id]%>" >Profile</a></p>
+<p> <a href="/makePost" >Make a Post</a></p> -->
+
+
+</div>
+<div class="post-list">
+<table>
+<% posts = Post.all %>
+<% posts.each do |post| %>
+<p><a href="/post/<%=post.id%>"><%=post.title%></a></p>
+<%end%>
+</table>
+</div>

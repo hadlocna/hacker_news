@@ -1,0 +1,15 @@
+<!-- <nav>
+<a href='/login'>Log In</a>
+<p> <a href='/signin'>Sign Up</a></p>
+<p> <a href='/logout'>Log Out</a></p>
+<p> <a href="/profile/<%=session[:id]%>" >Profile</a></p>
+<p> <a href="/makePost" >Make a Post</a></p>
+</nav> -->
+
+<% @user = User.find(params[:id]) %>
+
+<h1> This is <%= @user.name%>'s page </h1>
+<h2>email: <%=@user.email%></h2>
+
+
+

@@ -1,0 +1,15 @@
+<h1>This is the Post Page for:</h1>
+<%@post = Post.find(params[:id])%>
+<h2><%=@post.title%> by: <%=User.find_by_id(@post.user_id).name%></h2>
+<!-- make name a hyperlink to profile -->
+<h3><%=@post.body%></h3>
+
+<p> <a href="/makeComment/<%=params[:id]%>" >Make a Comment</a></p>
+
+
+<h3> Below are comments</h3>
+<% comments = @post.comments %>
+  <% comments.each do |comment| %>
+  <p><%= comment.body%></p>
+  <p>Author: <a href ="/profile/<%=comment.user_id%>"><%=User.find(comment.user_id).name%></a></p>
+<%end%>
