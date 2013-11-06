@@ -1,6 +1,7 @@
+<div class="container">
 <h1>This is the Post Page for:</h1>
 <%@post = Post.find(params[:id])%>
-<h2><%=@post.title%> by: <%=User.find_by_id(@post.user_id).name%></h2>
+<h2><%=@post.title%> by: <%=User.find_by_id(@post.user_id).name%><h4><img src="http://theykid.com/wp-content/thumbnails/605480_thumbs_up_with_clipping_path.jpg" width="32" height="32" href = "/postVote/<%=params[:id]%>"> Vote Count: <%=Postvote.find_by_post_id(params[:id]).count %></h4></h2>
 <!-- make name a hyperlink to profile -->
 <h3><%=@post.body%></h3>
 
@@ -11,5 +12,6 @@
 <% comments = @post.comments %>
   <% comments.each do |comment| %>
   <p><%= comment.body%></p>
-  <p>Author: <a href ="/profile/<%=comment.user_id%>"><%=User.find(comment.user_id).name%></a></p>
+  <p>Author: <a href ="/profile/<%=comment.user_id%>"><%=User.find(comment.user_id).name%></a> <img src="http://theykid.com/wp-content/thumbnails/605480_thumbs_up_with_clipping_path.jpg" width="32" height="32" href = "/commentVote/<%=params[:id]%>/<%=comment.id%>"> </p>
 <%end%>
+</div>

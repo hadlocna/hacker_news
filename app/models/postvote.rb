@@ -1,4 +1,3 @@
-class Comment < ActiveRecord::Base
+class Postvote < ActiveRecord::Base
   # Remember to create a migration!
-
 end

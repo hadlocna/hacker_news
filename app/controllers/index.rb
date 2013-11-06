@@ -68,5 +68,19 @@ post "/makeComment/:id" do
   redirect '/post/'+params[:id]
 end
 
+post "/postVote/:id" do
+  Postvote.create(post_id: params[:id])
+  redirect '/post/'+params[:id]
+end
+
+post "/postVote/:id/" do
+  Postvote.create(post_id: params[:id])
+  redirect '/post/'+params[:id]
+end
+
+post "/commentVote/:postid/:id" do
+  Commentvote.create(comment_id: params[:id])
+  redirect '/post/'+params[:postid]
+end
 
 
