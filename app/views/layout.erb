@@ -17,15 +17,19 @@
 
   <title></title>
 </head>
+
+<div id="header-nav">
 <% if session[:id] == nil %>
-<a href='/login'>Log In</a>
-<p> <a href='/signin'>Sign Up</a></p>
+<li> <a href='/login'>Log In</a></li>
+<li> <a href='/signin'>Sign Up</a></li>
 <% else %>
-<p> <a href='/logout'>Log Out</a></p>
-<p> <a href="/profile/<%=session[:id]%>" >Profile</a></p>
-<p> <a href="/makePost" >Make a Post</a></p>
-<p> <a href="/" >Home</a></p>
+<li> <a href='/logout'>Log Out</a></li>
+<li> <a href="/profile/<%=session[:id]%>" >Profile</a></li>
+<li> <a href="/makePost" >Make a post</a></li>
+<li> <a href="/" >Home</a></li>
 <%end%>
+</div>
+
 <body>
   <%= yield %>
 </body>
